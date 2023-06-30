@@ -9,12 +9,20 @@
 #include <stdio.h>
 #include <string.h>
 
-void test() {
+void testStackCheckFailed() {
     char str1[5];
     int i = 0;
     while (i < 100) {
         str1[++i] = 'a';
     }
+}
+
+void testStrcpy() {
+    char str1[20] = "C programming";
+    char str2[5];
+    
+    // copying str1 to str2
+    strcpy(str2, str1);
 }
 
 @interface ViewController ()
@@ -26,7 +34,8 @@ void test() {
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    test();
+    testStackCheckFailed();
+//    testStrcpy();
 }
 
 @end
